@@ -11,10 +11,6 @@
   outputs = { self, nixpkgs, home-manager, ... }:
     let 
       system = "x86_64-linux";
-      pkgs = import nixpkgs { 
-        inherit system;
-        config.allowUnfree = true;
-      };
     in {
       nixosConfigurations = {
         karpalo = nixpkgs.lib.nixosSystem {
@@ -22,6 +18,9 @@
           modules = [ 
             ./configuration.nix 
             home-manager.nixosModules.home-manager
+            {
+              nixpkgs.config.allowUnfree = true;
+            }
             {
               home-manager = {
                 useGlobalPkgs = true;

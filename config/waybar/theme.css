@@ -1,0 +1,22 @@
+@define-color blue      #7aa89f;
+@define-color lavender  #a4b9ef;
+@define-color sapphire  #7fb4ca;
+@define-color sky       #7dc4e4;
+@define-color teal      #6a9589;
+@define-color green     #76946a;
+@define-color yellow    #dca561;
+@define-color peach     #ffa066;
+@define-color maroon    #e46876;
+@define-color red       #e82424;
+@define-color mauve     #957fb8;
+@define-color pink      #d27e99;
+@define-color flamingo  #e82424;
+@define-color rosewater #dcd7ba;
+
+@define-color background-primary rgba(43, 48, 59, 0.5);
+@define-color background-active #2a2a37;
+
+@define-color success @green;
+@define-color warning @yellow;
+@define-color error   @red;
+@define-color info    @blue;

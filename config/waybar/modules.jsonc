@@ -1,0 +1,104 @@
+{
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true
+  },
+
+  "hyprland/window": {
+    "icon": true,
+    "icon-size": 16,
+    "max-length": 20,
+    "separate-ouputs": true
+  },
+
+  "memory": {
+    "format": " {: >2}% ({used:0.1f}G/{total:0.1f}G)",
+  },
+  "cpu": {
+    "format": " {usage}%"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C",
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity: >3}% ({time})",
+    "format-time": "{H}h {M}min",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "backlight": {
+    "format": "{icon} {percent: >3}%",
+    "format-icons": ["", ""],
+    "on-scroll-down": "brightnessctl set 5%-",
+    "on-scroll-up": "brightnessctl set +5%"
+  },
+
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "  {essid} ({bandwidthUpBits})",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": "",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "",
+    "max-length": 50,
+  },
+
+  "clock": {
+    "format": " {:%H:%M %a}",
+    "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "interval": 1
+  },
+
+  "bluetooth": {
+    "format-on": "",
+    "format-disabled": "",
+	  "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+    "show-passive-items": true,
+    "reverse-direction": false,
+    "smooth-scrolling-threshold": 1.0
+  },
+
+  "disk": {
+    "format": " {percentage_free}%",
+    "unit": "GB"
+  },
+
+  "wireplumber": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": ["", "", ""]
+  }
+}

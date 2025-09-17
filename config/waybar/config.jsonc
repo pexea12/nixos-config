@@ -1,0 +1,31 @@
+{
+  "style": "~/.config/waybar/style.css",
+
+  "layer": "top",
+  "position": "top",
+  "reload_style_on_change": true,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "bluetooth",
+    "backlight",
+    "battery",
+    "memory",
+    "cpu",
+    "temperature",
+    "disk",
+    "network",
+    "wireplumber",
+    "tray"
+  ],
+
+  "include": "~/.config/waybar/modules.jsonc"
+}

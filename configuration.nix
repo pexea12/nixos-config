@@ -19,12 +19,26 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
+  # TODO: Disable xserver
   services.xserver.enable = true;
 
   # TODO: Update sddm to ly
   services.displayManager.sddm.enable = true;
   # TODO: Update plasma6 to hyprland
   services.desktopManager.plasma6.enable = true;
+  programs.hyprland.enable = true;
+  programs.waybar.enable = true;
+
+  services.displayManager.defaultSession = "hyprland";
+
+  # services.displayManager.sddm.wayland.enable = true;
+
+  # Recommended: proper screen sharing/portals for Hyprland.
+  # xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+
+  # Optional QoL for Wayland apps (Chromium/Electron use Wayland by default).
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -43,12 +57,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -64,7 +72,7 @@
 
   environment.systemPackages = with pkgs; [
     neovim
-    ghostty 
+    ghostty
     htop
     fastfetch
   ];

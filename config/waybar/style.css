@@ -1,0 +1,106 @@
+@import 'theme.css';
+
+* {
+  font-family: 'JetBrainsMono Nerd Font',  monospace;
+  font-size: 10px;
+}
+
+#waybar {
+  background: @background-primary;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+	background: @background-active;
+  font-weight: bold;
+	opacity: 1;
+}
+
+#workspaces button.urgent {
+	background: @error;
+}
+
+#window {
+  margin-left: 20px;
+}
+
+/* Backlight */
+#backlight {
+	color: @yellow;
+	margin-right: 10px;
+}
+
+/* Battery */
+#battery {
+	color: @green;
+	margin-right: 10px;
+}
+
+#battery.charging {
+	color: @yellow;
+}
+
+#battery.warning {
+	background: @warning;
+}
+
+#battery.critical:not(.charging) {
+	background: @error;
+}
+
+/* Bluetooth */
+#bluetooth {
+  color: @blue;
+  margin-right: 10px;
+}
+
+/* CPU */
+#cpu {
+	color: @blue;
+  margin-right: 10px;
+}
+
+/* Clock */
+#clock {
+	color: @blue;
+	font-weight: bold;
+	font-size: 11px;
+  margin-right: 10px;
+}
+
+/* Memory */
+#memory {
+  color: @green;
+  margin-right: 10px;
+}
+
+/* Temperature */
+#temperature {
+	color: @teal;
+	margin-right: 10px;
+}
+
+/* Disk */
+#disk {
+  color: @lavender;
+  margin-right: 10px;
+}
+
+/* Network */
+#network {
+	color: @sky;
+  margin-right: 10px;
+}
+
+#network.disconnected {
+	color: @error;
+}
+
+#network.disabled {
+	color: @red;
+}
+
+/* Sound */
+#wireplumber {
+  margin-right: 5px;
+}
