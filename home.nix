@@ -4,6 +4,10 @@ let
   configDir = "${config.home.homeDirectory}/nixos-config/config";
 in
 {
+  imports = [
+    ./modules/fonts.nix
+  ];
+
   home.username = "pexea12";
   home.homeDirectory = "/home/pexea12";
   home.stateVersion = "25.05";
@@ -15,8 +19,7 @@ in
   };
 
   programs.bash.enable = true;
-
-  programs.kitty.enable = true;
+  programs.firefox.enable = true;
 
   # TODO: Disable VSCode
   programs.vscode.enable = true;
@@ -34,17 +37,14 @@ in
 
     # Utils
     brightnessctl
+    hyprlock
+    hypridle
 
-    # Fonts
-    # TODO: Reconfigure fonts, split to a different modules
-    # TODO: Set defaultFonts
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
-    font-awesome
-    noto-fonts
+    ## Screenshot
+    grim
+    slurp
+    wl-clipboard
   ];
-
-  fonts.fontconfig.enable = true;
 
   xdg.configFile."hypr" = {
     source = config.lib.file.mkOutOfStoreSymlink "${configDir}/hypr";
