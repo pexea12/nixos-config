@@ -9,14 +9,14 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }:
-    let 
+    let
       system = "x86_64-linux";
     in {
       nixosConfigurations = {
         karpalo = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ 
-            ./configuration.nix 
+          modules = [
+            ./configuration.nix
             home-manager.nixosModules.home-manager
             {
               nixpkgs.config.allowUnfree = true;

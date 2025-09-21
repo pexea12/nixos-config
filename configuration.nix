@@ -10,6 +10,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
   networking.hostName = "karpalo";
   networking.networkmanager.enable = true;
 
@@ -49,6 +52,7 @@
     lidSwitchExternalPower = "suspend";
   };
 
+  programs.zsh.enable = true; # Details zsh config is in home.nix
   users.users.pexea12 = {
     isNormalUser = true;
     description = "pexea12";

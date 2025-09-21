@@ -6,7 +6,7 @@ in
 {
   imports = [
     ./modules/fonts.nix
-    ./modules/shell.nix
+    (import ./modules/shell.nix { inherit configDir; })
   ];
 
   home.username = "pexea12";

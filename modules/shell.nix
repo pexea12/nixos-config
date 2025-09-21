@@ -1,24 +1,45 @@
+{ configDir }:
 { config, pkgs, lib, ... }:
 
+# zsh and tmux config
 {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autocd = true;
-    autosuggestions = {
-      enable = true;
-      highlight = true;
-      strategy = "history";
-    };
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     history = {
       saveNoDups = true;
+      ignorePatterns = [
+        "rm *"
+        "cd *"
+        "pkill *"
+      ];
     };
+
+    historySubstringSearch.enable = true;
 
     prezto = {
       enable = true;
-      theme = "robbyrussell";
-      plugins = [ "git" ];
+      prompt.theme = "steeef";
+      pmodules = [
+        "environment"
+        "terminal"
+        "editor"
+        "history"
+        "directory"
+        "completion"
+        "git"
+        "prompt"
+        "history-substring-search"
+      ];
     };
+  };
+
+  programs.tmux.enable = true;
+
+  xdg.configFile."tmux" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${configDir}/tmux";
   };
 }
