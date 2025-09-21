@@ -6,6 +6,7 @@ in
 {
   imports = [
     ./modules/fonts.nix
+    ./modules/shell.nix
   ];
 
   home.username = "pexea12";
@@ -33,12 +34,18 @@ in
 
     # Productivity
     logseq
-    wofi
 
     # Utils
     brightnessctl
+    pcmanfm
+
+    ## Hyprland
     hyprlock
     hypridle
+    rose-pine-hyprcursor
+
+    ### Launcher
+    wofi
 
     ## Screenshot
     grim

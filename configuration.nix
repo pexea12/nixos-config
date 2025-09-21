@@ -17,12 +17,9 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # TODO: Update sddm to ly
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
-
+  services.displayManager.ly.enable = true;
   services.displayManager.defaultSession = "hyprland";
 
   # Recommended: proper screen sharing/portals for Hyprland.
@@ -45,10 +42,18 @@
     pulse.enable = true;
   };
 
+  powerManagement.enable = true;
+  services.logind = {
+    lidSwitch = "suspend";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "suspend";
+  };
+
   users.users.pexea12 = {
     isNormalUser = true;
     description = "pexea12";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
