@@ -1,13 +1,14 @@
 {
   "hyprland/workspaces": {
     "active-only": false,
-    "all-outputs": true
+    "all-outputs": false,
+    "move-to-monitor": true
   },
 
   "hyprland/window": {
     "icon": true,
     "icon-size": 16,
-    "max-length": 20,
+    "max-length": 30,
     "separate-ouputs": true
   },
 
@@ -28,8 +29,11 @@
       "critical": 15
     },
     "format": "{icon} {capacity: >3}% ({time})",
+    "format-charging": " {capacity}% ({time})",
+    "format-full": " {capacity}%",
     "format-time": "{H}h {M}min",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{timeTo} | Health: {health} | Power: {power} | Cycles: {cycles}"
   },
 
   "backlight": {
@@ -52,8 +56,8 @@
   },
 
   "clock": {
-    "format": " {:%H:%M %a}",
-    "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
+    "format": " {:%d/%m/%Y %H:%M:%S %a}",
+    "format-alt": " {:%X %Z}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -92,7 +96,7 @@
   },
 
   "disk": {
-    "format": " {percentage_free}%",
+    "format": " {percentage_used}%",
     "unit": "GB"
   },
 
