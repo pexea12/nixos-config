@@ -38,8 +38,4 @@
   };
 
   programs.tmux.enable = true;
-
-  xdg.configFile."tmux" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${configDir}/tmux";
-  };
 }

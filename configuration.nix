@@ -18,7 +18,16 @@
 
   time.timeZone = "Europe/Helsinki";
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    inputMethod = {
+      enable = true;
+      type = "ibus";
+      ibus = {
+        engines = [ pkgs.ibus-engines.bamboo ];
+      };
+    };
+  };
 
   programs.hyprland.enable = true;
   programs.waybar.enable = true;

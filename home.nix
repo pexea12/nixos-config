@@ -38,10 +38,15 @@ in
     # Utils
     brightnessctl
     pcmanfm
+    imagemagick
+    unzip
+    ffmpeg
+    feh
 
     ## Hyprland
     hyprlock
     hypridle
+    hyprpaper
     rose-pine-hyprcursor
 
     ### Launcher
