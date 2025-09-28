@@ -13,8 +13,11 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
-  networking.hostName = "karpalo";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "karpalo";
+    networkmanager.enable = true;
+    firewall.allowedTCPPorts = [ 8000 8888 ];
+  };
 
   time.timeZone = "Europe/Helsinki";
 

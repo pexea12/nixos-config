@@ -9,7 +9,7 @@
     "icon": true,
     "icon-size": 16,
     "max-length": 30,
-    "separate-ouputs": true
+    "separate-outputs": true
   },
 
   "memory": {
