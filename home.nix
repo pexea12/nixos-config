@@ -42,6 +42,7 @@ in
     unzip
     ffmpeg
     feh
+    playerctl
 
     ## Hyprland
     hyprlock
