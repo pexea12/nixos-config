@@ -57,11 +57,25 @@
     pulse.enable = true;
   };
 
+  # Input
+  services.libinput.enable = true;
+  services.keyd.enable = true;
+  services.keyd.keyboards."orange-keyboard" = {
+    ids = [ "32c2:0018:c9343c6c" ];
+    settings = {
+      main = {
+        leftalt = "leftmeta";
+        leftmeta = "leftalt";
+        rightmeta = "rightalt";
+      };
+    };
+  };
+
   powerManagement.enable = true;
-  services.logind = {
-    lidSwitch = "suspend";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "suspend";
+  services.logind.settings.Login = {
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "suspend";
   };
 
   programs.zsh.enable = true; # Details zsh config is in home.nix
@@ -77,6 +91,10 @@
     ghostty
     htop
     fastfetch
+
+    # Input
+    libinput
+    usbutils
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
