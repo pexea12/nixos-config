@@ -86,8 +86,12 @@
     shell = pkgs.zsh;
   };
 
+  programs.neovim = {
+    defaultEditor = true;
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
-    neovim
     ghostty
     htop
     fastfetch

@@ -34,6 +34,7 @@ in
 
     # Productivity
     logseq
+    anki
 
     # Utils
     brightnessctl
