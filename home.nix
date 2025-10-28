@@ -15,8 +15,12 @@ in
 
   programs.git = {
     enable = true;
-    userEmail = "dzungnguyenvn@outlook.com";
-    userName = "Dzung Nguyen";
+    settings = {
+      user = {
+        email = "dzungnguyenvn@outlook.com";
+        name = "Dzung Nguyen";
+      };
+    };
   };
 
   programs.bash.enable = true;
