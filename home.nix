@@ -11,6 +11,7 @@ in
     # Apps
     ./modules/brave.nix
     ./modules/waybar.nix
+    ./modules/hyprland.nix
   ];
 
   home.username = "pexea12";
@@ -53,24 +54,9 @@ in
     playerctl
     tree
 
-    ## Hyprland
-    hyprlock
-    hypridle
-    hyprpaper
-    rose-pine-hyprcursor
-
     ### Launcher
     wofi
-
-    ## Screenshot
-    grim
-    slurp
-    wl-clipboard
   ];
-
-  xdg.configFile."hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${configDir}/hypr";
-  };
 
 
   # TODO: Add vscode config
