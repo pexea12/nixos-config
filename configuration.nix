@@ -38,8 +38,8 @@
   services.displayManager.defaultSession = "hyprland";
 
   # Recommended: proper screen sharing/portals for Hyprland.
-  # xdg.portal.enable = true;
-  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
   # Optional QoL for Wayland apps (Chromium/Electron use Wayland by default).
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
