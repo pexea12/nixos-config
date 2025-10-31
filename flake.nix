@@ -25,7 +25,9 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.pexea12 = import ./home.nix;
+                users.pexea12 = {
+                  imports = [ ./home.nix ];
+                };
                 backupFileExtension = "backup";
               };
             }

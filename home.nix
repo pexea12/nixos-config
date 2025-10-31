@@ -7,6 +7,9 @@ in
   imports = [
     ./modules/fonts.nix
     (import ./modules/shell.nix { inherit configDir; })
+
+    # Apps
+    ./modules/brave.nix
   ];
 
   home.username = "pexea12";
@@ -34,7 +37,6 @@ in
 
     # Browsers
     chromium
-    brave
 
     # Productivity
     logseq
@@ -48,6 +50,7 @@ in
     ffmpeg
     feh
     playerctl
+    tree
 
     ## Hyprland
     hyprlock
