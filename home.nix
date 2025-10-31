@@ -10,6 +10,7 @@ in
 
     # Apps
     ./modules/brave.nix
+    ./modules/waybar.nix
   ];
 
   home.username = "pexea12";
@@ -69,10 +70,6 @@ in
 
   xdg.configFile."hypr" = {
     source = config.lib.file.mkOutOfStoreSymlink "${configDir}/hypr";
-  };
-
-  xdg.configFile."waybar" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${configDir}/waybar";
   };
 
 

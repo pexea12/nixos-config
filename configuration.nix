@@ -33,7 +33,6 @@
   };
 
   programs.hyprland.enable = true;
-  programs.waybar.enable = true;
   services.displayManager.ly.enable = true;
   services.displayManager.defaultSession = "hyprland";
 
