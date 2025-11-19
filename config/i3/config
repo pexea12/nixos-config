@@ -3,29 +3,30 @@ set $super Mod4
 set $alt Mod1
 
 # set font
-font pango:Ionicons 9, Poppins Regular 9
+font pango:JetBrainsMono Nerd Font 10
 
 # use mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
 # autostart
-exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
+exec --no-startup-id feh --bg-scale ~/.config/hypr/wallpaper.png
+exec --no-startup-id picom -b
+exec --no-startup-id dunst
 
-# start a terminal
+# Terminal
 bindsym $super+Return exec ghostty
 
-# start dmenu (a program launcher)
-bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
--fn 'Poppins:size=9' -nb '#141c21' -nf '#93a1a1' \
--sb '#289c93' -sf '#141c21'"
+# Launcher
+bindsym $super+d exec rofi -show drun
 
 # common apps keybinds
-bindsym $super+Escape exec i3lock -i ~/.config/i3/lock_1440_900.png
+bindsym $super+Escape exec i3lock-color -c 000000
 
-# Change volume
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% 
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+# Change volume (using wpctl for PipeWire)
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # Change brightness
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
@@ -106,8 +107,8 @@ bindsym $super+Shift+r exec "i3-msg restart"
 bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' \
 -b 'Yes' 'i3-msg exit'"
 
-# Screenshot
-bindsym --release $alt+Shift+3 exec scrot -s -o -q 100 - | xclip -selection clipboard -t image/png
+# Screenshot (matching hyprland's Print key with selection)
+bindsym --release Print exec maim -s | xclip -selection clipboard -t image/png
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -133,9 +134,10 @@ client.background #263640
 # window rules, you can find the window class using xprop
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
-for_window [class=".*"] border pixel 8
+for_window [class=".*"] border pixel 1
 hide_edge_borders smart
-gaps inner 12
+gaps inner 1
+gaps outer 1
 smart_gaps on
 
 # ibus

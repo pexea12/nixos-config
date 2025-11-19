@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules/input.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -33,10 +34,16 @@
   };
 
   services.displayManager.ly.enable = true;
-  services.displayManager.defaultSession = "hyprland";
+  services.displayManager.defaultSession = "none+i3";
 
-  # Optional QoL for Wayland apps (Chromium/Electron use Wayland by default).
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # Enable X11 windowing system
+  services.xserver = {
+    enable = true;
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3;
+    };
+  };
 
   # Required for XDG portals when using home-manager as NixOS module
   environment.pathsToLink = [
@@ -57,19 +64,7 @@
     pulse.enable = true;
   };
 
-  # Input
-  services.libinput.enable = true;
-  services.keyd.enable = true;
-  services.keyd.keyboards."orange-keyboard" = {
-    ids = [ "32c2:0018:c9343c6c" ];
-    settings = {
-      main = {
-        leftalt = "leftmeta";
-        leftmeta = "leftalt";
-        rightmeta = "rightalt";
-      };
-    };
-  };
+  # Input configuration is now in modules/input.nix
 
   powerManagement.enable = true;
   services.logind.settings.Login = {

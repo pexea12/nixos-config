@@ -13,7 +13,8 @@
   services.hyprpaper.enable = true;
 
   home.packages = with pkgs; [
-    pkgs.rose-pine-hyprcursor
+    rose-pine-hyprcursor
+    wofi
 
     ## Screenshot
     grim

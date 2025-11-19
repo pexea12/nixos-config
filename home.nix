@@ -13,8 +13,8 @@ in
 
     # Apps
     ./modules/brave.nix
-    ./modules/waybar.nix
-    ./modules/hyprland.nix
+    ./modules/polybar.nix
+    ./modules/i3.nix
   ];
 
   home.username = "pexea12";
@@ -57,9 +57,7 @@ in
     feh
     playerctl
     tree
-
-    ### Launcher
-    wofi
+    psmisc
   ];
 
 
