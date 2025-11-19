@@ -38,6 +38,12 @@
   # Optional QoL for Wayland apps (Chromium/Electron use Wayland by default).
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # Required for XDG portals when using home-manager as NixOS module
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
