@@ -9,7 +9,7 @@ font pango:JetBrainsMono Nerd Font 10
 floating_modifier $super
 
 # autostart
-exec --no-startup-id feh --bg-scale ~/.config/hypr/wallpaper.png
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.png
 exec --no-startup-id picom -b
 exec --no-startup-id dunst
 
@@ -20,7 +20,7 @@ bindsym $super+Return exec ghostty
 bindsym $super+d exec rofi -show drun
 
 # common apps keybinds
-bindsym $super+Escape exec i3lock-color -c 000000
+bindsym $super+Escape exec i3lock-color -i ~/.config/i3/wallpaper.png --fill
 
 # Change volume (using wpctl for PipeWire)
 bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+

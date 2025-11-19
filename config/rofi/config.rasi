@@ -6,9 +6,9 @@ configuration {
   location: 0;
   disable-history: false;
   hide-scrollbar: true;
-  display-drun: "  Apps";
-  display-run: "  Run";
-  display-window: " 﩯 Windows";
+  display-drun: "Apps";
+  display-run: "Run";
+  display-window: "Windows";
   sidebar-mode: true;
 }
 
@@ -19,11 +19,6 @@ configuration {
   bg-alt: #2a2a37;
   fg: #C5C8C6;
   fg-alt: #7aa89f;
-
-  border: 0;
-  margin: 0;
-  padding: 0;
-  spacing: 0;
 }
 
 window {

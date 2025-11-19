@@ -63,7 +63,5 @@ in
 
   # TODO: Add vscode config
   # TODO: Use variable for pexea12
-  # TODO: Try dunst
-  # TODO: Modify waybar charging status for battery
   # TODO: Configure power profile for battery (power saving) and also configure waybar
 }

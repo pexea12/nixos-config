@@ -4,7 +4,7 @@
   # Screen locker
   services.screen-locker = {
     enable = true;
-    lockCmd = "${pkgs.i3lock-color}/bin/i3lock-color -c 000000";
+    lockCmd = "${pkgs.i3lock-color}/bin/i3lock-color -i ~/.config/i3/wallpaper.png --fill";
     inactiveInterval = 5; # Lock after 5 minutes
   };
 
