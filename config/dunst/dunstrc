@@ -1,72 +1,72 @@
 [global]
-    font = JetBrainsMono Nerd Font 10
+  font = JetBrainsMono Nerd Font 10
 
-    # Allow markup
-    markup = full
-    format = "<b>%s</b>\n%b"
+  # Allow markup
+  markup = full
+  format = "<b>%s</b>\n%b"
 
-    # Sort messages by urgency
-    sort = yes
+  # Sort messages by urgency
+  sort = yes
 
-    # Show how many messages are currently hidden
-    indicate_hidden = yes
+  # Show how many messages are currently hidden
+  indicate_hidden = yes
 
-    # Alignment of message text
-    alignment = left
+  # Alignment of message text
+  alignment = left
 
-    # Show age of message if message is older than show_age_threshold seconds
-    show_age_threshold = 60
+  # Show age of message if message is older than show_age_threshold seconds
+  show_age_threshold = 60
 
-    # Split notifications into multiple lines
-    word_wrap = yes
+  # Split notifications into multiple lines
+  word_wrap = yes
 
-    # Ignore newlines '\n' in notifications
-    ignore_newline = no
+  # Ignore newlines '\n' in notifications
+  ignore_newline = no
 
-    # Geometry
-    width = 300
-    height = 300
-    origin = top-right
-    offset = 10x50
+  # Geometry
+  width = 300
+  height = 300
+  origin = top-right
+  offset = 10x50
 
-    # Shrink window if it's smaller than the width
-    shrink = no
+  # Shrink window if it's smaller than the width
+  shrink = no
 
-    # Transparency
-    transparency = 10
+  # Transparency
+  transparency = 10
 
-    # Separator between notifications
-    separator_height = 2
-    separator_color = frame
+  # Separator between notifications
+  separator_height = 2
+  separator_color = frame
 
-    # Padding
-    padding = 8
-    horizontal_padding = 8
+  # Padding
+  padding = 8
+  horizontal_padding = 8
 
-    # Frame
-    frame_width = 1
-    frame_color = "#7aa89f"
+  # Frame
+  frame_width = 1
+  frame_color = "#7aa89f"
 
-    # Idle threshold
-    idle_threshold = 120
+  # Idle threshold
+  idle_threshold = 120
 
-    # Mouse actions
-    mouse_left_click = close_current
-    mouse_middle_click = do_action
-    mouse_right_click = close_all
+  # Mouse actions
+  mouse_left_click = close_current
+  mouse_middle_click = do_action
+  mouse_right_click = close_all
 
 [urgency_low]
-    background = "#2b303b"
-    foreground = "#C5C8C6"
-    timeout = 5
+  background = "#2b303b"
+  foreground = "#C5C8C6"
+  timeout = 5
 
 [urgency_normal]
-    background = "#2b303b"
-    foreground = "#C5C8C6"
-    timeout = 10
+  background = "#2b303b"
+  foreground = "#C5C8C6"
+  timeout = 10
 
 [urgency_critical]
-    background = "#e82424"
-    foreground = "#ffffff"
-    frame_color = "#e82424"
-    timeout = 0
+  background = "#e82424"
+  foreground = "#ffffff"
+  frame_color = "#e82424"
+  timeout = 0

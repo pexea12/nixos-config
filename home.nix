@@ -12,7 +12,7 @@ in
     ./modules/shell.nix
 
     # Apps
-    ./modules/brave.nix
+    ./modules/browsers.nix
     ./modules/polybar.nix
     ./modules/i3.nix
   ];
@@ -32,16 +32,12 @@ in
   };
 
   programs.bash.enable = true;
-  programs.firefox.enable = true;
 
   # TODO: Disable VSCode
   programs.vscode.enable = true;
 
   home.packages = with pkgs; [
     bat
-
-    # Browsers
-    chromium
 
     # Productivity
     logseq
