@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, configDir, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -22,6 +22,6 @@
   ];
 
   xdg.configFile."hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink ../config/hypr;
+    source = config.lib.file.mkOutOfStoreSymlink "${configDir}/hypr";
   };
 }

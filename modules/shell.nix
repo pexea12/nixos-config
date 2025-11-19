@@ -1,4 +1,3 @@
-{ configDir }:
 { config, pkgs, lib, ... }:
 
 # zsh and tmux config

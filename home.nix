@@ -4,9 +4,12 @@ let
   configDir = "${config.home.homeDirectory}/nixos-config/config";
 in
 {
+  # Make configDir available to all imported modules
+  _module.args = { inherit configDir; };
+
   imports = [
     ./modules/fonts.nix
-    (import ./modules/shell.nix { inherit configDir; })
+    ./modules/shell.nix
 
     # Apps
     ./modules/brave.nix
@@ -43,6 +46,7 @@ in
     # Productivity
     logseq
     anki
+    claude-code
 
     # Utils
     brightnessctl
