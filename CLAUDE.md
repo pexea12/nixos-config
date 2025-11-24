@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a NixOS configuration repository using flakes and home-manager. The configuration is for a system named "karpalo" (hostname) with user "pexea12". It uses Hyprland as the window manager on Wayland with various desktop environment components.
+This is a NixOS configuration repository using flakes and home-manager. The configuration is for a system named "karpalo" (hostname) with user "pexea12". It uses i3 as the window manager (It used to use hyprland on top on Wayland but not anymore)
 
 ## Architecture
 

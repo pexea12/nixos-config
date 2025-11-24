@@ -107,7 +107,7 @@ bindsym $super+Shift+r exec "i3-msg restart"
 bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' \
 -b 'Yes' 'i3-msg exit'"
 
-# Screenshot (matching hyprland's Print key with selection)
+# Screenshot
 bindsym --release Print exec maim -s | xclip -selection clipboard -t image/png
 
 # resize window (you can also use the mouse for that)

@@ -45,6 +45,9 @@
     };
   };
 
+  # Automatic monitor detection (sets up udev rules and systemd services)
+  services.autorandr.enable = true;
+
   # Required for XDG portals when using home-manager as NixOS module
   environment.pathsToLink = [
     "/share/applications"
