@@ -1,6 +1,15 @@
 { config, pkgs, lib, configDir, ... }:
 
 {
+  # Cursor theme configuration
+  home.pointerCursor = {
+    name = "breeze_cursors";
+    package = pkgs.kdePackages.breeze;
+    size = 24;
+    x11.enable = true;
+    x11.defaultCursor = "left_ptr";
+  };
+
   # Screen locker
   services.screen-locker = {
     enable = true;
@@ -37,6 +46,9 @@
   };
 
   home.packages = with pkgs; [
+    # Cursor theme
+    kdePackages.breeze
+
     # Wallpaper setter
     feh
 
