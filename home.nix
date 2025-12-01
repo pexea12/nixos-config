@@ -16,6 +16,7 @@ in
     ./modules/polybar.nix
     ./modules/i3.nix
     ./modules/display.nix
+    ./modules/audio.nix
   ];
 
   home.username = "pexea12";

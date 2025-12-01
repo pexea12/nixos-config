@@ -83,7 +83,7 @@
   users.users.pexea12 = {
     isNormalUser = true;
     description = "pexea12";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     shell = pkgs.zsh;
   };
 
