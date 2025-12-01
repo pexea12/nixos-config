@@ -44,6 +44,7 @@ in
     logseq
     anki
     claude-code
+    signal-desktop
 
     # Utils
     brightnessctl

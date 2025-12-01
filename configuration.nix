@@ -57,6 +57,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Blueman - GUI Bluetooth manager
+  services.blueman.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
