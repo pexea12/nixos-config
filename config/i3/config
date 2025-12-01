@@ -38,8 +38,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Keyboard light
-bindsym XF86KbdBrightnessUp exec brightnessctl --device='smc::kbd_backlight' set 5%+
-bindsym XF86KbdBrightnessDown exec brightnessctl --device='smc::kbd_backlight' set 5%-
+bindsym XF86KbdBrightnessUp exec brightnessctl --device='tpacpi::kbd_backlight' set +1
+bindsym XF86KbdBrightnessDown exec brightnessctl --device='tpacpi::kbd_backlight' set 1-
+bindsym $super+F12 exec brightnessctl --device='tpacpi::kbd_backlight' set +1
+bindsym $super+F11 exec brightnessctl --device='tpacpi::kbd_backlight' set 1-
 
 # kill focused window
 bindsym $super+Shift+q kill
