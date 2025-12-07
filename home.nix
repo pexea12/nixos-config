@@ -23,6 +23,13 @@ in
   home.homeDirectory = "/home/pexea12";
   home.stateVersion = "25.05";
 
+  # ibus environment variables for input method support
+  home.sessionVariables = {
+    GTK_IM_MODULE = "ibus";
+    XMODIFIERS = "@im=ibus";
+    QT_IM_MODULE = "ibus";
+  };
+
   programs.git = {
     enable = true;
     settings = {

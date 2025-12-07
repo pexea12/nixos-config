@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./system_modules/input.nix
       ./system_modules/tailscale.nix
+      ./system_modules/power.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -23,16 +24,7 @@
 
   time.timeZone = "Europe/Helsinki";
 
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    inputMethod = {
-      enable = true;
-      type = "ibus";
-      ibus = {
-        engines = [ pkgs.ibus-engines.bamboo ];
-      };
-    };
-  };
+  i18n.defaultLocale = "en_US.UTF-8";
 
   services.displayManager.ly.enable = true;
   services.displayManager.defaultSession = "none+i3";
@@ -71,9 +63,6 @@
     pulse.enable = true;
   };
 
-  # Input configuration is now in modules/input.nix
-
-  powerManagement.enable = true;
   services.logind.settings.Login = {
     HandleLidSwitchDocked = "ignore";
     HandleLidSwitch = "suspend";

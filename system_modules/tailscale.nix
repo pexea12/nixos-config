@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  # Tailscale VPN service
   # useRoutingFeatures = "both" enables:
   # - IP forwarding (for acting as exit node/subnet router)
   # - Loose reverse path filtering (for using exit nodes)
