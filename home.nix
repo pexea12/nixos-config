@@ -8,15 +8,15 @@ in
   _module.args = { inherit configDir; };
 
   imports = [
-    ./modules/fonts.nix
-    ./modules/shell.nix
+    ./user_modules/fonts.nix
+    ./user_modules/shell.nix
 
     # Apps
-    ./modules/browsers.nix
-    ./modules/polybar.nix
-    ./modules/i3.nix
-    ./modules/display.nix
-    ./modules/audio.nix
+    ./user_modules/browsers.nix
+    ./user_modules/polybar.nix
+    ./user_modules/i3.nix
+    ./user_modules/display.nix
+    ./user_modules/audio.nix
   ];
 
   home.username = "pexea12";
