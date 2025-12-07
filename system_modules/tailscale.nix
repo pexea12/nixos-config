@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  # Tailscale VPN service
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "both"; # Enable as both client and subnet router/exit node
