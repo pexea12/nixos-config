@@ -21,6 +21,9 @@
 
       RUNTIME_PM_ON_AC = "on";
       RUNTIME_PM_ON_BAT = "auto";
+
+      # Exclude Bluetooth from USB autosuspend to prevent disconnections
+      USB_EXCLUDE_BTUSB = 1;
     };
   };
 
