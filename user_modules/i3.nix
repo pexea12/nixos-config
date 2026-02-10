@@ -35,8 +35,8 @@
       }
       {
         delay = 330; # 5.5 minutes
-        command = "${pkgs.xorg.xset}/bin/xset dpms force off";
-        canceller = "${pkgs.xorg.xset}/bin/xset dpms force on && ${pkgs.brightnessctl}/bin/brightnessctl -r";
+        command = "${pkgs.xset}/bin/xset dpms force off";
+        canceller = "${pkgs.xset}/bin/xset dpms force on && ${pkgs.brightnessctl}/bin/brightnessctl -r";
       }
       {
         delay = 1800; # 30 minutes
