@@ -26,7 +26,8 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.displayManager.ly.enable = true;
+  # services.displayManager.ly.enable = true; # TODO: Re-enable when ly package is fixed (broken after 2026-02-11 update)
+  services.displayManager.sddm.enable = true;
   services.displayManager.defaultSession = "none+i3";
 
   # Enable X11 windowing system
