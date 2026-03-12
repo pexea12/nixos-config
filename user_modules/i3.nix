@@ -10,13 +10,6 @@
     x11.defaultCursor = "left_ptr";
   };
 
-  # Screen locker
-  services.screen-locker = {
-    enable = true;
-    lockCmd = "${pkgs.i3lock-color}/bin/i3lock-color -i ~/.config/i3/wallpaper.png --fill";
-    inactiveInterval = 5; # Lock after 5 minutes
-  };
-
   # Idle management
   services.xidlehook = {
     enable = true;
