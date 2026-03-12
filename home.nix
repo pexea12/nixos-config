@@ -17,6 +17,7 @@ in
     ./user_modules/i3.nix
     ./user_modules/display.nix
     ./user_modules/audio.nix
+    ./user_modules/pcmanfm.nix
   ];
 
   home.username = "pexea12";
@@ -47,6 +48,7 @@ in
 
   home.packages = with pkgs; [
     bat
+    ripgrep
 
     # Productivity
     logseq
