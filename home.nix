@@ -57,6 +57,7 @@ in
     signal-desktop
     devbox
     zed-editor
+    copier
 
     # Utils
     brightnessctl
