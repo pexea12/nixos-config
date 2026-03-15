@@ -55,6 +55,8 @@ in
     anki
     claude-code
     signal-desktop
+    devbox
+    zed-editor
 
     # Utils
     brightnessctl
