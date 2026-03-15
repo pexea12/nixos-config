@@ -69,6 +69,7 @@ in
     playerctl
     tree
     psmisc
+    vlc
   ];
 
 
