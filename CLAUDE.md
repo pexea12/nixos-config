@@ -112,6 +112,10 @@ For applications using mkOutOfStoreSymlink (hyprland, waybar):
 - Changes take effect immediately without rebuild
 - To add new config: create in config/, then symlink in corresponding module
 
+## tmux
+
+When adding or removing a tmux plugin in `config/tmux/tmux.conf`, always update `config/tmux/PLUGINS.md` to reflect the change — include what the plugin does and how to use it.
+
 ## Important Notes
 
 - **Username/hostname hardcoded**: "pexea12" and "karpalo" are hardcoded (see TODOs in flake.nix:38 and home.nix:67)
