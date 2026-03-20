@@ -50,6 +50,7 @@ in
   home.packages = with pkgs; [
     bat
     ripgrep
+    gnumake
 
     # Productivity
     logseq
