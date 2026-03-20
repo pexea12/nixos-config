@@ -19,6 +19,7 @@ in
     ./user_modules/display.nix
     ./user_modules/audio.nix
     ./user_modules/pcmanfm.nix
+    ./user_modules/zed.nix
   ];
 
   home.username = "pexea12";
@@ -59,13 +60,11 @@ in
     claude-code
     signal-desktop
     devbox
-    zed-editor
     copier
     gh
 
     # Utils
     brightnessctl
-    pcmanfm
     imagemagick
     unzip
     ffmpeg
