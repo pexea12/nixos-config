@@ -4,6 +4,8 @@ Personal NixOS configuration for **karpalo** using flakes and home-manager.
 
 ## System
 
+| Component | Value |
+|---|---|
 | **WM** | i3 (X11) |
 | **Shell** | zsh (prezto) |
 | **Terminal** | ghostty |

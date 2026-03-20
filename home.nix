@@ -39,6 +39,7 @@ in
         email = "dzungnguyenvn@outlook.com";
         name = "Dzung Nguyen";
       };
+      core.editor = "nvim";
     };
   };
 
