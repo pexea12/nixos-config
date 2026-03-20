@@ -10,6 +10,7 @@ in
   imports = [
     ./user_modules/fonts.nix
     ./user_modules/shell.nix
+    ./user_modules/tmux.nix
 
     # Apps
     ./user_modules/browsers.nix
@@ -58,6 +59,7 @@ in
     devbox
     zed-editor
     copier
+    gh
 
     # Utils
     brightnessctl
