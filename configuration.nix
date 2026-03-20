@@ -7,6 +7,7 @@
       ./system_modules/input.nix
       ./system_modules/tailscale.nix
       ./system_modules/power.nix
+      ./system_modules/network.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -15,12 +16,6 @@
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
-
-  networking = {
-    hostName = "karpalo";
-    networkmanager.enable = true;
-    firewall.allowedTCPPorts = [ 8000 8888 ];
-  };
 
   time.timeZone = "Europe/Helsinki";
 
