@@ -40,8 +40,13 @@ This allows editing config files directly without rebuilding.
 
 ### Building and Switching Configuration
 
+**IMPORTANT**: To rebuild, just run `make switch`. This requires sudo and Claude should NEVER run it — always tell the user to run it themselves.
+
 ```bash
-# Rebuild and switch to new configuration
+# Rebuild and switch to new configuration (preferred)
+make switch
+
+# Equivalent to:
 sudo nixos-rebuild switch --flake .#karpalo
 
 # Build without switching (test configuration)

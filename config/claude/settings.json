@@ -1,8 +1,20 @@
 {
-  "model": "opus[1m]",
-  "effortLevel": "high",
+  "model": "sonnet",
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "pexea12-skills": {
+      "source": {
+        "source": "github",
+        "repo": "pexea12/claude-skills"
+      }
+    }
+  },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
-    "slack@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true
   }
 }

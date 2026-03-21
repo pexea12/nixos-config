@@ -20,6 +20,7 @@ in
     ./user_modules/audio.nix
     ./user_modules/pcmanfm.nix
     ./user_modules/zed.nix
+    ./user_modules/claude-code.nix
   ];
 
   home.username = "pexea12";
@@ -57,7 +58,6 @@ in
     # Productivity
     logseq
     anki
-    claude-code
     signal-desktop
     devbox
     copier
