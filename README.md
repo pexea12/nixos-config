@@ -54,4 +54,20 @@ nix flake update
 
 # Garbage collection
 sudo nix-collect-garbage -d
+
+# Symlink config to ~/.config on macOS (requires: brew install stow)
+make link APP=tmux
+make unlink APP=tmux
 ```
+
+### Using configs without NixOS
+
+On non-NixOS systems (e.g. macOS), you can use [GNU Stow](https://www.gnu.org/software/stow/) to symlink configs from `config/` into `~/.config/` without needing Nix or home-manager:
+
+```bash
+make link APP=tmux    # symlinks config/tmux/ → ~/.config/tmux/
+make link APP=zed     # symlinks config/zed/ → ~/.config/zed/
+make unlink APP=tmux  # removes the symlinks
+```
+
+Install stow: `brew install stow` (macOS) or `nix-env -iA nixpkgs.stow`

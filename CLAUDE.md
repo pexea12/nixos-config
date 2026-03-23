@@ -77,6 +77,17 @@ nix-collect-garbage --delete-older-than 7d
 
 Note: Automatic garbage collection is configured to run weekly via configuration.nix:122.
 
+### Symlinking Configs with GNU Stow
+
+On non-NixOS systems (e.g. macOS), GNU Stow can symlink configs from `config/` into `~/.config/` without Nix or home-manager. This is useful for reusing dotfiles (tmux, zed, etc.) on machines that don't run NixOS.
+
+Requires `stow` to be installed (`brew install stow` on macOS).
+
+```bash
+make link APP=tmux    # symlinks config/tmux/ → ~/.config/tmux/
+make unlink APP=tmux  # removes the symlinks
+```
+
 ### Testing Configuration Changes
 
 ```bash
