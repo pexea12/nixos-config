@@ -28,6 +28,7 @@
         "editor"
         "history"
         "directory"
+        "utility"
         "completion"
         "git"
         "prompt"
