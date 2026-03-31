@@ -9,8 +9,8 @@ cleanup:
 	nix-store --optimise
 
 link:
-	mkdir -p $(HOME)/.config/$(APP)
-	stow -d config/$(APP) -t $(HOME)/.config/$(APP) .
+	mkdir -p $(or $(TARGET),$(HOME)/.config/$(APP))
+	stow -d config/$(APP) -t $(or $(TARGET),$(HOME)/.config/$(APP)) .
 
 unlink:
-	stow -d config/$(APP) -t $(HOME)/.config/$(APP) -D .
+	stow -d config/$(APP) -t $(or $(TARGET),$(HOME)/.config/$(APP)) -D .

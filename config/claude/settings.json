@@ -1,0 +1,8 @@
+{
+  "model": "opus[1m]",
+  "effortLevel": "high",
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "slack@claude-plugins-official": true
+  }
+}
