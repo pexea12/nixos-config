@@ -123,6 +123,13 @@ For applications using mkOutOfStoreSymlink (hyprland, waybar):
 - Changes take effect immediately without rebuild
 - To add new config: create in config/, then symlink in corresponding module
 
+## Neovim
+
+- Config location: `config/nvim/`
+- Uses neovim 0.12's built-in `vim.pack` for plugins (no lazy.nvim)
+- See `config/nvim/CLAUDE.md` for detailed instructions on the config structure, how to add plugins, etc.
+- Deploy on non-NixOS systems: `make link APP=nvim`
+
 ## tmux
 
 When adding or removing a tmux plugin in `config/tmux/tmux.conf`, always update `config/tmux/PLUGINS.md` to reflect the change — include what the plugin does and how to use it.
