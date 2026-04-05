@@ -5,6 +5,7 @@
     nerd-fonts.jetbrains-mono
     font-awesome
     noto-fonts
+    noto-fonts-cjk-sans
     noto-fonts-color-emoji
   ];
 
