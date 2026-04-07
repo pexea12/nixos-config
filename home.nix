@@ -54,6 +54,7 @@ in
     bat
     ripgrep
     gnumake
+    jq
 
     # Productivity
     logseq
