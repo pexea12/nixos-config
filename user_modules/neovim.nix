@@ -4,6 +4,7 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    extraPackages = with pkgs; [ gnumake gcc tree-sitter ];
   };
 
   xdg.configFile."nvim" = {

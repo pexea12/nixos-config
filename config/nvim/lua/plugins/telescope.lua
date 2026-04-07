@@ -1,3 +1,17 @@
+-- fzf-native requires a build step; use PackChanged hook for install/update
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    if ev.data.spec.name == "telescope-fzf-native.nvim"
+      and (ev.data.kind == "install" or ev.data.kind == "update") then
+      local dir = vim.fn.glob(vim.fn.stdpath("data") .. "/site/pack/*/opt/telescope-fzf-native.nvim")
+      if dir == "" then
+        dir = vim.fn.glob(vim.fn.stdpath("data") .. "/site/pack/*/start/telescope-fzf-native.nvim")
+      end
+      if dir ~= "" then vim.fn.system({ "make", "-C", dir }) end
+    end
+  end,
+})
+
 vim.pack.add({
   "https://github.com/nvim-telescope/telescope.nvim",
   "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
@@ -5,9 +19,12 @@ vim.pack.add({
 })
 -- plenary.nvim and nvim-web-devicons already added by neo-tree
 
--- fzf-native requires a build step (vim.pack has no build hooks)
-local fzf_dir = vim.fn.stdpath("data") .. "/site/pack/nvim/start/telescope-fzf-native.nvim"
-if vim.uv.fs_stat(fzf_dir) and not vim.uv.fs_stat(fzf_dir .. "/build/libfzf.so")
+-- One-time startup build in case plugin is already installed but not yet built
+local fzf_dir = vim.fn.glob(vim.fn.stdpath("data") .. "/site/pack/*/opt/telescope-fzf-native.nvim")
+if fzf_dir == "" then
+  fzf_dir = vim.fn.glob(vim.fn.stdpath("data") .. "/site/pack/*/start/telescope-fzf-native.nvim")
+end
+if fzf_dir ~= "" and not vim.uv.fs_stat(fzf_dir .. "/build/libfzf.so")
   and not vim.uv.fs_stat(fzf_dir .. "/build/libfzf.dylib") then
   vim.fn.system({ "make", "-C", fzf_dir })
 end
