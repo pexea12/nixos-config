@@ -81,11 +81,6 @@
     shell = pkgs.zsh;
   };
 
-  programs.neovim = {
-    defaultEditor = true;
-    enable = true;
-  };
-
   environment.systemPackages = with pkgs; [
     ghostty
     htop

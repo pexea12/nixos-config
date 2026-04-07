@@ -11,6 +11,7 @@ in
     ./user_modules/fonts.nix
     ./user_modules/shell.nix
     ./user_modules/tmux.nix
+    ./user_modules/neovim.nix
 
     # Apps
     ./user_modules/browsers.nix
