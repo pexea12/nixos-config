@@ -15,5 +15,4 @@ require("neo-tree").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle file tree" })
-vim.keymap.set("n", "<leader>o", "<cmd>Neotree focus<cr>", { desc = "Focus file tree" })
+vim.keymap.set("n", "<C-k>", "<cmd>Neotree toggle<cr>", { desc = "Toggle file tree" })
