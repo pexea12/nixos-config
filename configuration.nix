@@ -66,6 +66,14 @@
   };
 
   programs.zsh.enable = true; # Details zsh config is in home.nix
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   users.users.pexea12 = {
     isNormalUser = true;
     description = "pexea12";
