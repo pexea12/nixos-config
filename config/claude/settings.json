@@ -1,16 +1,17 @@
 {
   "model": "sonnet",
+  "permissions": {
+    "allow": [
+      "WebFetch",
+      "WebSearch",
+      "Bash(git log *)"
+    ]
+  },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
       "source": {
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
-      }
-    },
-    "pexea12-skills": {
-      "source": {
-        "source": "github",
-        "repo": "pexea12/claude-skills"
       }
     }
   },

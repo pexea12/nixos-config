@@ -12,4 +12,5 @@
   home.file.".claude/commands" = {
     source = config.lib.file.mkOutOfStoreSymlink "${configDir}/claude/commands";
   };
+
 }
