@@ -21,4 +21,9 @@
     source = config.lib.file.mkOutOfStoreSymlink "${configDir}/claude/scripts";
   };
 
+  # Symlink opencode config (~/.config/opencode/opencode.json)
+  home.file.".config/opencode/opencode.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${configDir}/opencode/opencode.json";
+  };
+
 }
