@@ -72,6 +72,7 @@ in
     ffmpeg
     feh
     playerctl
+    sox
     tree
     psmisc
     vlc

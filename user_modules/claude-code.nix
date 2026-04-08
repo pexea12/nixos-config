@@ -13,4 +13,9 @@
     source = config.lib.file.mkOutOfStoreSymlink "${configDir}/claude/commands";
   };
 
+  # Symlink scripts (~/.claude/scripts/)
+  home.file.".claude/scripts" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${configDir}/claude/scripts";
+  };
+
 }
