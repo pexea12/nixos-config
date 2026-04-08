@@ -6,7 +6,7 @@
       "Bash(git log *)"
     ]
   },
-  "model": "haiku",
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/context-bar.sh"
