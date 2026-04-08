@@ -1,7 +1,10 @@
 { config, pkgs, configDir, ... }:
 
 {
-  home.packages = [ pkgs.claude-code ];
+  home.packages = [
+    pkgs.claude-code
+    pkgs.opencode
+  ];
 
   # Symlink settings.json (model, marketplaces, enabled plugins/skills, MCPs)
   home.file.".claude/settings.json" = {
