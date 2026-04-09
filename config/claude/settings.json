@@ -37,8 +37,7 @@
       "Bash(* id_rsa *)",
       "Bash(* id_ed25519 *)",
       "Bash(* .netrc *)",
-      "Bash(* .npmrc *)",
-      "Bash(* .pypirc *)"
+      "Bash(* .npmrc *)"
     ]
   },
   "model": "opus[1m]",

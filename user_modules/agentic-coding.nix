@@ -4,6 +4,7 @@
   home.packages = [
     pkgs.claude-code
     pkgs.opencode
+    pkgs.codex
   ];
 
   # Symlink settings.json (model, marketplaces, enabled plugins/skills, MCPs)
