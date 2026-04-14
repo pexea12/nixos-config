@@ -8,6 +8,7 @@
       ./system_modules/tailscale.nix
       ./system_modules/power.nix
       ./system_modules/network.nix
+      ./system_modules/nordvpn.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -77,7 +78,7 @@
   users.users.pexea12 = {
     isNormalUser = true;
     description = "pexea12";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "nordvpn" ];
     shell = pkgs.zsh;
   };
 
