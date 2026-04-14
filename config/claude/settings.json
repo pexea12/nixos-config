@@ -3,10 +3,40 @@
     "allow": [
       "WebFetch",
       "WebSearch",
-      "Bash(git log *)"
+      "Bash(git log *)",
+      "Skill(update-config *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(git add *)",
+      "Bash(git checkout *)",
+      "Bash(git commit *)",
+      "Bash(git fetch *)",
+      "Bash(git merge *)",
+      "Bash(git pull *)",
+      "Bash(gh pr view *)"
+    ],
+    "deny": [
+      "Bash(* .ssh *)",
+      "Bash(* .env *)",
+      "Bash(* .env.*)",
+      "Bash(* credentials *)",
+      "Bash(* secrets *)",
+      "Bash(* .aws *)",
+      "Bash(* .gnupg *)",
+      "Bash(* id_rsa *)",
+      "Bash(* id_ed25519 *)",
+      "Bash(* .netrc *)",
+      "Bash(* .npmrc *)",
+      "Bash(* .pypirc *)"
     ]
   },
-  "model": "opus",
+  "model": "opus[1m]",
+  "effortLevel": "max",
+  "env": {
+    "CLAUDE_CODE_EFFORT_LEVEL": "max"
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/context-bar.sh"
