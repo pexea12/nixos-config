@@ -14,6 +14,9 @@
   libidn2,
   zlib,
   wireguard-tools,
+  sqlite,
+  libnl,
+  libcap_ng,
 }: let
   pname = "nordvpn";
   version = "4.5.0";
@@ -26,7 +29,7 @@
       hash = "sha256-bekJOzhLGwFsYRuPagANwUduyCufaU4XoJPwWoBniR8=";
     };
 
-    buildInputs = [ libxml2 libidn2 ];
+    buildInputs = [ libxml2 libidn2 sqlite libnl libcap_ng ];
     nativeBuildInputs = [ dpkg autoPatchelfHook stdenv.cc.cc.lib ];
 
     dontConfigure = true;
@@ -63,6 +66,9 @@
       libidn2
       zlib
       wireguard-tools
+      sqlite
+      libnl
+      libcap_ng
     ];
   };
 in
