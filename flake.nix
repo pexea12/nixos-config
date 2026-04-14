@@ -14,7 +14,7 @@
       overlay = final: prev: {
         nordvpn = final.callPackage ./packages/nordvpn.nix {};
       };
-      pkgs = import nixpkgs { inherit system; overlays = [ overlay ]; config.allowUnfree = true; };
+      pkgs = import nixpkgs { inherit system; overlays = [ overlay ]; };
     in {
       packages.${system}.nordvpn = pkgs.nordvpn;
       nixosConfigurations = {
