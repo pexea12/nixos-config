@@ -11,7 +11,12 @@
   outputs = { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
+      overlay = final: prev: {
+        nordvpn = final.callPackage ./packages/nordvpn.nix {};
+      };
+      pkgs = import nixpkgs { inherit system; overlays = [ overlay ]; config.allowUnfree = true; };
     in {
+      packages.${system}.nordvpn = pkgs.nordvpn;
       nixosConfigurations = {
         karpalo = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -20,6 +25,9 @@
             home-manager.nixosModules.home-manager
             {
               nixpkgs.config.allowUnfree = true;
+            }
+            {
+              nixpkgs.overlays = [ overlay ];
             }
             {
               home-manager = {
