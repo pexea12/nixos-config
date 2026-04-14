@@ -76,6 +76,7 @@ in
     tree
     psmisc
     vlc
+    nix-update
   ];
 
 
