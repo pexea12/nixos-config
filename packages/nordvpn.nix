@@ -20,14 +20,13 @@
 }: let
   pname = "nordvpn";
   version = "4.5.0";
+  src = fetchurl {
+    url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_${version}_amd64.deb";
+    hash = "sha256-bekJOzhLGwFsYRuPagANwUduyCufaU4XoJPwWoBniR8=";
+  };
 
   nordVPNBase = stdenv.mkDerivation {
-    inherit pname version;
-
-    src = fetchurl {
-      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_${version}_amd64.deb";
-      hash = "sha256-bekJOzhLGwFsYRuPagANwUduyCufaU4XoJPwWoBniR8=";
-    };
+    inherit pname version src;
 
     buildInputs = [ libxml2 libidn2 sqlite libnl libcap_ng ];
     nativeBuildInputs = [ dpkg autoPatchelfHook stdenv.cc.cc.lib ];
@@ -73,7 +72,7 @@
   };
 in
   stdenv.mkDerivation {
-    inherit pname version;
+    inherit pname version src;
 
     dontUnpack = true;
     dontConfigure = true;
