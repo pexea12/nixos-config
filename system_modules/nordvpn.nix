@@ -2,7 +2,6 @@
   environment.systemPackages = [ pkgs.nordvpn ];
 
   networking.firewall = {
-    checkReversePath = false;
     allowedTCPPorts = [ 443 ];
     allowedUDPPorts = [ 1194 ];
   };
