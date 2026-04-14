@@ -1,7 +1,5 @@
-{ pkgs, ... }: let
-  nordVpnPkg = pkgs.nordvpn;
-in {
-  environment.systemPackages = [ nordVpnPkg ];
+{ pkgs, ... }: {
+  environment.systemPackages = [ pkgs.nordvpn ];
 
   networking.firewall = {
     checkReversePath = false;
@@ -14,11 +12,11 @@ in {
   systemd.services.nordvpn = {
     description = "NordVPN daemon.";
     serviceConfig = {
-      ExecStart = "${nordVpnPkg}/bin/nordvpnd";
+      ExecStart = "${pkgs.nordvpn}/bin/nordvpnd";
       ExecStartPre = pkgs.writeShellScript "nordvpn-start" ''
         mkdir -m 700 -p /var/lib/nordvpn;
         if [ -z "$(ls -A /var/lib/nordvpn)" ]; then
-          cp -r ${nordVpnPkg}/var/lib/nordvpn/* /var/lib/nordvpn;
+          cp -r ${pkgs.nordvpn}/var/lib/nordvpn/* /var/lib/nordvpn;
         fi
       '';
       NonBlocking = true;
