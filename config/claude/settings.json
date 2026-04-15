@@ -64,5 +64,6 @@
       }
     }
   },
-  "effortLevel": "max"
+  "effortLevel": "max",
+  "model": "opus"
 }

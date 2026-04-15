@@ -5,6 +5,10 @@
     pkgs.claude-code
     pkgs.opencode
     pkgs.codex
+    (pkgs.writeShellScriptBin "ccusage" ''
+      export PATH="${pkgs.nodejs}/bin:$PATH"
+      npx --yes ccusage "$@"
+    '')
   ];
 
   # Symlink settings.json (model, marketplaces, enabled plugins/skills, MCPs)
