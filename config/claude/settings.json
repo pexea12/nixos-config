@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_EFFORT_LEVEL": "max"
+  },
   "permissions": {
     "allow": [
       "WebFetch",
@@ -15,7 +18,14 @@
       "Bash(git fetch *)",
       "Bash(git merge *)",
       "Bash(git pull *)",
-      "Bash(gh pr view *)"
+      "Bash(gh pr list *)",
+      "Bash(gh pr view *)",
+      "Bash(gh repo *)",
+      "Bash(gh release list *)",
+      "Bash(gh release view *)",
+      "Bash(gws docs *)",
+      "Bash(echo *)",
+      "Bash(date *)"
     ],
     "deny": [
       "Bash(* .ssh *)",
@@ -33,17 +43,14 @@
     ]
   },
   "model": "opus[1m]",
-  "effortLevel": "max",
-  "env": {
-    "CLAUDE_CODE_EFFORT_LEVEL": "max"
-  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/context-bar.sh"
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true,
+    "slack@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
