@@ -16,7 +16,8 @@ config/nvim/
     └── plugins/
         ├── init.lua        # Auto-imports all plugin files in this directory
         ├── theme.lua       # neovim-ayu colorscheme setup
-        └── treesitter.lua  # nvim-treesitter config + additional parsers
+        ├── treesitter.lua  # nvim-treesitter config + additional parsers
+        └── lsp.lua         # mason.nvim + LSP activation + keymaps + completion + format-on-save
 ```
 
 ## Plugin Management: vim.pack
@@ -52,6 +53,12 @@ vim.pack.add({
 - **Shatur/neovim-ayu** (`theme.lua`) — ayu-dark colorscheme
 - **nvim-treesitter/nvim-treesitter** (`treesitter.lua`) — syntax highlighting + indent for additional languages (go, yaml, toml, kotlin, clojure, rust). Neovim 0.12 bundles parsers for lua, python, markdown, bash, vim, c.
 - **nvim-neo-tree/neo-tree.nvim** (`neo-tree.lua`) — file tree (`<leader>e` toggle, `<leader>o` focus)
+- **neovim/nvim-lspconfig** (`lsp.lua`) — LSP server configs for ~300 servers (auto-discovered by Neovim 0.12)
+- **williamboman/mason.nvim** + **mason-lspconfig.nvim** (`lsp.lua`) — LSP server installer. Auto-installs basedpyright and ruff.
+- **nvim-telescope/telescope.nvim** (`telescope.lua`) — fuzzy finder with fzf-native and ui-select extensions
+- **folke/snacks.nvim** (`snacks.lua`) — bigfile, indent guides, notifications, git browse
+- **nvim-lualine/lualine.nvim** (`lualine.lua`) — statusline
+- **echasnovski/mini.surround** (`mini-surround.lua`) — surround text editing
 
 ## Deployment
 
@@ -68,9 +75,23 @@ On first launch, `vim.pack` will automatically clone and install plugins.
 
 Enabled via `vim.g.editorconfig = true` in `options.lua`. Uses the repo root `/.editorconfig` — no separate editorconfig file needed in this directory.
 
-## Future additions (not yet implemented)
+## LSP Setup
 
-- LSP configuration (vim.lsp.enable)
-- Telescope (fuzzy finder)
-- Completion (blink.cmp)
-- Statusline (lualine)
+Uses nvim-lspconfig for server configs (auto-discovered by Neovim 0.12 via runtimepath). Custom overrides via `vim.lsp.config()` in `lua/plugins/lsp.lua`. mason.nvim handles installing the server binaries.
+
+**Python**: basedpyright (type checking) + ruff (linting/formatting). Format-on-save is enabled via ruff.
+
+**Swapping to ty**: Change `basedpyright` to `ty` in `vim.lsp.config()`, `ensure_installed`, and `vim.lsp.enable()` in `lua/plugins/lsp.lua`.
+
+**Adding a new language**: Just add the server name to `ensure_installed` and `vim.lsp.enable()`. nvim-lspconfig provides the config. Override with `vim.lsp.config("name", { ... })` if needed. Browse configs at https://github.com/neovim/nvim-lspconfig/tree/master/lsp
+
+**Completion**: Uses Neovim 0.12's built-in `vim.lsp.completion` with autotrigger (no external plugins).
+
+**LSP keymaps** (active when LSP attaches to a buffer):
+- `gd` — go to definition
+- `gD` — go to declaration
+- `gy` — go to type definition
+- `gf` — format buffer
+- `]d` / `[d` — next/prev diagnostic
+- `<leader>d` — diagnostic float
+- Built-in: `grn` (rename), `gra` (code action), `grr` (references), `gri` (implementation), `gO` (document symbols via telescope), `K` (hover)
