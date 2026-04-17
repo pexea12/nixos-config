@@ -1,7 +1,4 @@
 {
-  "env": {
-    "CLAUDE_CODE_EFFORT_LEVEL": "max"
-  },
   "permissions": {
     "allow": [
       "WebFetch",
@@ -65,5 +62,6 @@
         "repo": "obra/superpowers-marketplace"
       }
     }
-  }
+  },
+  "effortLevel": "xhigh"
 }
