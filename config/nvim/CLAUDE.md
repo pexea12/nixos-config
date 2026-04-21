@@ -59,6 +59,7 @@ vim.pack.add({
 - **folke/snacks.nvim** (`snacks.lua`) — bigfile, indent guides, notifications, git browse
 - **nvim-lualine/lualine.nvim** (`lualine.lua`) — statusline
 - **echasnovski/mini.surround** (`mini-surround.lua`) — surround text editing
+- **MeanderingProgrammer/render-markdown.nvim** (`render-markdown.lua`) — enhanced markdown rendering (styled headings, checkboxes, concealed syntax)
 
 ## Deployment
 
