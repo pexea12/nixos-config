@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(~/.devbox/ai/claude/bun x --bun ccusage@17.1.6 2>/dev/null), Bash(cd ~/.devbox/ai/claude && bun x --bun ccusage@17.1.6 2>/dev/null)
+allowed-tools: Bash(~/.devbox/ai/claude/bun x --bun ccusage@18.0.10 --breakdown 2>/dev/null), Bash(cd ~/.devbox/ai/claude && bun x --bun ccusage@18.0.10 --breakdown 2>/dev/null)
 description: Gets cost history
 ---
 
@@ -13,10 +13,11 @@ This command fetches the latest Claude usage costs using the ccusage tool and pr
 
 ## Instructions
 
-1. Run `Bash(~/.devbox/ai/claude/bun x --bun ccusage@17.1.6 2>/dev/null)` to fetch the latest usage data
+1. Run `Bash(~/.devbox/ai/claude/bun x --bun ccusage@18.0.10 --breakdown 2>/dev/null)` to fetch the latest usage data with per-model breakdown
 2. Parse the output to extract key metrics
 3. Provide a clear summary including:
    - Total costs for recent periods
+   - Per-model cost breakdown (e.g. Opus, Sonnet, Haiku)
    - Usage trends
    - Any notable patterns or spikes
 4. Present the information in an easy-to-understand format
@@ -30,9 +31,9 @@ No parameters required - the command runs with default settings.
 ### Example 1: Basic Usage
 When the user says "/cost-history" you should:
 
-1. Execute `Bash(~/.devbox/ai/claude/bun x --bun ccusage@17.1.6 2>/dev/null)` (after install)
+1. Execute `Bash(~/.devbox/ai/claude/bun x --bun ccusage@18.0.10 --breakdown 2>/dev/null)`
 2. Analyze the returned data
-3. Summarize key findings like total spend, daily/weekly trends, and any usage patterns
+3. Summarize key findings like total spend, per-model costs, daily/weekly trends, and any usage patterns
 4. Present the summary in a readable format with highlights of important information
 
 ## Notes

@@ -20,6 +20,8 @@
       "Bash(gh repo *)",
       "Bash(gh release list *)",
       "Bash(gh release view *)",
+      "Bash(gws --version)",
+      "Bash(gws --help)",
       "Bash(gws docs *)",
       "Bash(echo *)",
       "Bash(date *)"
@@ -63,5 +65,5 @@
       }
     }
   },
-  "effortLevel": "xhigh"
+  "effortLevel": "max"
 }
