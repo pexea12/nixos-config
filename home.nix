@@ -43,6 +43,7 @@ in
         name = "Dzung Nguyen";
       };
       core.editor = "nvim";
+      init.defaultBranch = "main";
     };
   };
 
