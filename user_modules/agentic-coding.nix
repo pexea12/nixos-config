@@ -3,8 +3,7 @@
 {
   home.packages = [
     pkgs.claude-code
-    pkgs.opencode
-    pkgs.codex
+    pkgs.pi-coding-agent
     (pkgs.writeShellScriptBin "ccusage" ''
       export PATH="${pkgs.nodejs}/bin:$PATH"
       npx --yes ccusage "$@"
@@ -25,10 +24,4 @@
   home.file.".claude/scripts" = {
     source = config.lib.file.mkOutOfStoreSymlink "${configDir}/claude/scripts";
   };
-
-  # Symlink opencode config (~/.config/opencode/opencode.json)
-  home.file.".config/opencode/opencode.json" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${configDir}/opencode/opencode.json";
-  };
-
 }
