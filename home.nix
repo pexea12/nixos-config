@@ -21,6 +21,7 @@ in
     ./user_modules/audio.nix
     ./user_modules/pcmanfm.nix
     ./user_modules/zed.nix
+    ./user_modules/ghostty.nix
     ./user_modules/agentic-coding.nix
   ];
 
