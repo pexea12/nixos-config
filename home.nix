@@ -58,6 +58,7 @@ in
     ripgrep
     gnumake
     jq
+    gws
 
     # Productivity
     logseq
