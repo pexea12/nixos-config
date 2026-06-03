@@ -12,11 +12,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, googleworkspace-cli, ... }:
     let
       system = "x86_64-linux";
       overlay = final: prev: {
         nordvpn = final.callPackage ./packages/nordvpn.nix {};
+        gws = googleworkspace-cli.packages.${final.system}.default;
       };
       pkgs = import nixpkgs { inherit system; overlays = [ overlay ]; };
     in {
