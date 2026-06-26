@@ -3,6 +3,7 @@
 {
   home.packages = [
     pkgs.claude-code
+    pkgs.codex
     pkgs.pi-coding-agent
     (pkgs.writeShellScriptBin "ccusage" ''
       export PATH="${pkgs.nodejs}/bin:$PATH"
