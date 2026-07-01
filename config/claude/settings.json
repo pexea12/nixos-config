@@ -40,7 +40,7 @@
       "Bash(* .npmrc *)"
     ]
   },
-  "model": "opus[1m]",
+  "model": "sonnet[1m]",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/context-bar.sh"
@@ -64,6 +64,6 @@
       }
     }
   },
-  "effortLevel": "max",
-  "model": "opus"
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true
 }
