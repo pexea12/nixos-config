@@ -8,7 +8,6 @@
       ./system_modules/tailscale.nix
       ./system_modules/power.nix
       ./system_modules/network.nix
-      ./system_modules/nordvpn.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -18,7 +17,7 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
-  time.timeZone = "Europe/Helsinki";
+  time.timeZone = "Asia/Ho_Chi_Minh";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -78,7 +77,7 @@
   users.users.pexea12 = {
     isNormalUser = true;
     description = "pexea12";
-    extraGroups = [ "networkmanager" "wheel" "audio" "nordvpn" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     shell = pkgs.zsh;
   };
 

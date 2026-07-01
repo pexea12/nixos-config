@@ -61,7 +61,6 @@ in
     gws
 
     # Productivity
-    logseq
     anki
     signal-desktop
     devbox
