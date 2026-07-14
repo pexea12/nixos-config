@@ -62,6 +62,7 @@ in
 
     # Productivity
     anki
+    libreoffice
     signal-desktop
     devbox
     copier
@@ -79,6 +80,11 @@ in
     psmisc
     vlc
     nix-update
+
+    nodejs
+
+    # Cloud
+    awscli2
   ];
 
 
