@@ -17,7 +17,8 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
-  time.timeZone = "Asia/Ho_Chi_Minh";
+  services.automatic-timezoned.enable = true;
+  services.geoclue2.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
 
