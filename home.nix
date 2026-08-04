@@ -80,6 +80,7 @@ in
     psmisc
     vlc
     nix-update
+    mosh
 
     nodejs
 
