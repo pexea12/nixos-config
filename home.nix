@@ -23,6 +23,7 @@ in
     ./user_modules/zed.nix
     ./user_modules/ghostty.nix
     ./user_modules/agentic-coding.nix
+    ./user_modules/htop.nix
   ];
 
   home.username = "pexea12";
