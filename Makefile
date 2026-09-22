@@ -4,9 +4,6 @@ switch:
 update:
 	nix flake update
 
-update-nordvpn:
-	./scripts/update-nordvpn.sh
-
 cleanup:
 	nix-collect-garbage -d
 	nix-store --optimise
