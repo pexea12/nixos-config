@@ -5,6 +5,7 @@
     pkgs.claude-code
     pkgs.codex
     pkgs.pi-coding-agent
+    pkgs.omp
     (pkgs.writeShellScriptBin "ccusage" ''
       export PATH="${pkgs.nodejs}/bin:$PATH"
       npx --yes ccusage "$@"
