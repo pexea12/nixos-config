@@ -1,7 +1,6 @@
 { config, pkgs, lib, configDir, ... }:
 
 {
-  # Cursor theme configuration
   home.pointerCursor = {
     enable = true;
     name = "breeze_cursors";
@@ -11,7 +10,6 @@
     x11.defaultCursor = "left_ptr";
   };
 
-  # Idle management
   services.xidlehook = {
     enable = true;
     detect-sleep = true;
@@ -26,6 +24,7 @@
       {
         delay = 300; # 5 minutes
         command = "${pkgs.systemd}/bin/loginctl lock-session";
+        canceller = "${pkgs.brightnessctl}/bin/brightnessctl -r";
       }
       {
         delay = 330; # 5.5 minutes

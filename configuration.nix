@@ -13,6 +13,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Diagnosing lid-close suspend freezes: records which device was mid-suspend
+  # in RTC memory, so the next boot's dmesg can name the culprit after a hard
+  # reset. Side effect: clobbers the hardware RTC clock (corrected on next
+  # boot via timesyncd). Remove once the freeze is diagnosed.
+  boot.kernelParams = [ "pm_trace=1" ];
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
@@ -22,8 +27,7 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # services.displayManager.ly.enable = true; # TODO: Re-enable when ly package is fixed (broken after 2026-02-11 update)
-  services.displayManager.sddm.enable = true;
+  services.displayManager.ly.enable = true;
   services.displayManager.defaultSession = "none+i3";
 
   # Enable X11 windowing system

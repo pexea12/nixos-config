@@ -64,5 +64,6 @@
     }
   },
   "tui": "fullscreen",
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "hooks": {"SessionStart":[{"matcher":"*","hooks":[{"type":"command","command":"bash '/home/pexea12/.claude/hooks/herdr-agent-state.sh' session","timeout":10}]}]}
 }
