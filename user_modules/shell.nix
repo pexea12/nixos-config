@@ -19,10 +19,6 @@
 
     historySubstringSearch.enable = true;
 
-    initContent = ''
-      unalias gws 2>/dev/null || true
-    '';
-
     prezto = {
       enable = true;
       prompt.theme = "steeef";

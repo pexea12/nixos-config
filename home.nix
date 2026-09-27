@@ -59,7 +59,6 @@ in
     ripgrep
     gnumake
     jq
-    gws
 
     # Productivity
     anki
@@ -84,9 +83,6 @@ in
     mosh
 
     nodejs
-
-    # Cloud
-    awscli2
   ];
 
 
